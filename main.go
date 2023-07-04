@@ -8,6 +8,7 @@ import (
 func main() {
 	var randChan = make(chan int)
 	var averageChan = make(chan float64)
+	var nums []int
 
 	for i := 0; i <= 100; i++ {
 		go func() {
@@ -15,7 +16,6 @@ func main() {
 		}()
 
 		go func() {
-			var nums []int
 			var sum int
 
 			for num := range randChan {
